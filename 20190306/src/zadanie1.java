@@ -124,9 +124,11 @@ public class zadanie1 {
 		Oblicz(1, 2, 3, 4);
 		Oblicz(9, 9, 9, 9);
 		Oblicz(0, 0, 0, 0);
-		Oblicz(3, 3,3, 3);
+		Oblicz(3, 3, 3, 3);
+		Oblicz(3, 2, 5, 3);
+		Oblicz(1, 3, 2, 3);
+		Oblicz(2, 7, 3, 3);
 	}
-
 
 
 }
