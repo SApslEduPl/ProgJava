@@ -107,8 +107,6 @@ public class zamiana {
 		for(String line : a) {
 			zmien(line);
 		}
-		//zmien("Kowalski");
-		//zmien("Sierputowski");
 	}
 
 }
