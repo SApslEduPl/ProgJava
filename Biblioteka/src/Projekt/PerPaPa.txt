@@ -1,0 +1,2 @@
+id,tytul,autor,kategoria,ilosc,wolne
+b1,tak,tak,tak,2,1
