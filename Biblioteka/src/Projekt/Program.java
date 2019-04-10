@@ -87,7 +87,7 @@ public class Program {
 			          new java.util.Scanner(System.in).nextLine();
 					break;
 				case 2:
-					Ksiazki.Usuwanie();
+					Biblioteka.Oddaj();
 					System.out.println("Nacisnij ENTER aby kontynuowac...");
 			          new java.util.Scanner(System.in).nextLine();
 					break;

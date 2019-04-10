@@ -89,9 +89,9 @@ public class Biblioteka {
         }
 		
 	}
-	public static void Oddaj(){//nieskonczone
+	public static void Oddaj(){
 		try {
-			int i=0, j=-1, x=0, io=0, bool=0;
+			int i=0, j=-1, x=0, io=0, bool=0, pomi=0;
 			String pom, id, idp, idk;
 			String[] Uzytkownik = new String[7];
 			Scanner wczytaj = new Scanner(System.in);
@@ -114,47 +114,55 @@ public class Biblioteka {
 			if(j>=0) {
 				pom=Tablica[j];
 				Uzytkownik = Dodatkowe.rozdzielenie(7, pom);
-				if(Uzytkownik[3].equals("0")) {
-					bool=3;
+				if(!Uzytkownik[3].equals("0")) {
+					bool=1;
+					System.out.println(Uzytkownik[3]);
 				}
-				else if(Uzytkownik[4].equals("0")) {
-					bool=4;
+				if(!Uzytkownik[4].equals("0")) {
+					bool=1;
+					System.out.println(Uzytkownik[4]);
 				}
-				else if(Uzytkownik[5].equals("0")) {
-					bool=5;
+				if(!Uzytkownik[5].equals("0")) {
+					bool=1;
+					System.out.println(Uzytkownik[5]);
 				}
-				else if(Uzytkownik[6].equals("0")) {
-					bool=6;
-				}
-				else {
-					bool=0;
-				}
-				if((bool>=3)&&(bool<=6)) {
-					System.out.println("Podaj id ksizki");
-					idk=wczytaj.next();
-					if(Dodatkowe.WolneKsiazki(idk)>0) {
-						Uzytkownik[bool]=idk;
-						Dodatkowe.Usuwanie(idk);
-						System.out.println("Wypozyczono ksiazke.");
-						PrintWriter zapis = new PrintWriter(UserPath);
-						Tablica[j]=Uzytkownik[0]+","+Uzytkownik[1]+","+Uzytkownik[2]+","+Uzytkownik[3]+","+Uzytkownik[4]+","+Uzytkownik[5]+","+Uzytkownik[6];
-						for(j=0;j<i;j++) {
-							zapis.println(Tablica[j]);
-						}
-				        zapis.close();
-					}
-					else if(Dodatkowe.WolneKsiazki(idk)==0) {
-						System.out.println("Brak ksiazki.");
-					}
-					if(Dodatkowe.WolneKsiazki(idk)==-1) {
-						System.out.println("Brak ksiazki o danym id.");
-					}
-					if(Dodatkowe.WolneKsiazki(idk)==-2) {
-						System.out.println("Blad wczytania pliku.");
-					}
+				if(!Uzytkownik[6].equals("0")) {
+					bool=1;
+					System.out.println(Uzytkownik[6]);
 				}
 				if(bool==0) {
-					
+					System.out.println("Brak ksiazek.");
+				}
+				if(bool==1) {
+					System.out.println("Podaj id ksiazki do oddania.");
+					idk= wczytaj.next();
+					System.out.println(idk);
+					if(Uzytkownik[3].equals(idk)) {
+						pomi=3;
+					}
+					if(Uzytkownik[4].equals(idk)) {
+						pomi=4;
+					}
+					if(Uzytkownik[5].equals(idk)) {
+						pomi=5;
+					}
+					if(Uzytkownik[6].equals(idk)) {
+						pomi=6;
+					}
+					if(pomi==0){
+						System.out.println("Brak ksiazki.");
+					}
+					if(pomi>0) {
+						Uzytkownik[pomi]="0";
+					}
+					PrintWriter zapis = new PrintWriter(UserPath);
+					Tablica[j]=Uzytkownik[0]+","+Uzytkownik[1]+","+Uzytkownik[2]+","+Uzytkownik[3]+","+Uzytkownik[4]+","+Uzytkownik[5]+","+Uzytkownik[6];
+					for(j=0;j<i;j++) {
+						zapis.println(Tablica[j]);
+					}
+			        zapis.close();
+			        Dodatkowe.Dodawanie(idk);
+			        System.out.println("Oddano ksiazke.");
 				}
 			}
 			else {
