@@ -42,6 +42,7 @@ public class Ksiazki {
 				zapis.println(Tablica[j]);
 			}
 	        zapis.close();
+	        wczytaj.close();
         }
         catch (IOException e){
             System.out.println("Blad!");       
@@ -90,6 +91,7 @@ public class Ksiazki {
 			else {
 				System.out.println("Nie znaleziono ksiazki.");
 			}
+			wczytaj.close();
         }
         catch (IOException e){
             System.out.println("Blad!");       
@@ -131,6 +133,7 @@ public class Ksiazki {
 			else {
 				System.out.println("Brak Ksiazki.");
 			}
+			wczytaj.close();
         }
         catch (IOException e){
             System.out.println("Blad!");       

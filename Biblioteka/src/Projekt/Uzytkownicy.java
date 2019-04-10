@@ -34,6 +34,7 @@ public class Uzytkownicy {
 				zapis.println(Tablica[j]);
 			}
 	        zapis.close();
+	        wczytaj.close();
         }
         catch (IOException e){
             System.out.println("Blad!");       
@@ -74,6 +75,7 @@ public class Uzytkownicy {
 			else {
 				System.out.println("Nie znaleziono uzytkownika.");
 			}
+			wczytaj.close();
         }
         catch (IOException e){
             System.out.println("Blad!");       
@@ -133,6 +135,7 @@ public class Uzytkownicy {
 			else {
 				System.out.println("Brak uzytkownika.");
 			}
+			wczytaj.close();
         }
         catch (IOException e){
             System.out.println("Blad!");       

@@ -11,8 +11,10 @@ public class Program {
 		ProcessBuilder pb = new ProcessBuilder("Notepad.exe");
 		pb.start();
 		System.out.print("Podaj ");
-		String a;
+		String a="";
+		a="sd";
 		a = wczytaj.next();
+		wczytaj.close();
 	}
 
 }

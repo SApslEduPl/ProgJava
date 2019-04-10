@@ -1,6 +1,5 @@
 package Projekt;
 
-import java.io.IOException;
 import java.util.*;
 
 public class Program {
@@ -103,6 +102,7 @@ public class Program {
 				System.out.println("Brak opcji!");
 				break;
 			}
+			wczytaj.close();
 		}
 	}
 }

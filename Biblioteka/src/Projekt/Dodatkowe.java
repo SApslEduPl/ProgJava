@@ -13,7 +13,7 @@ public class Dodatkowe {
 	public static String BookPath="C:\\Intel\\Intelmeme\\Biblioteka\\src\\Projekt\\PerPaPa.txt";
 	public static String[] rozdzielenie(int l, String dane) {
 		String[] tablica = new String[l];
-		int i, j, io;
+		int i, io;
 		for(i=0;i<l;i++) {
 			if(dane.indexOf(",")>-1) {
 				io=dane.indexOf(",");
@@ -60,6 +60,7 @@ public class Dodatkowe {
 			else {
 				wynik=-1;
 			}
+			wczytaj.close();
         }
         catch (IOException e){
             wynik=-2;    
@@ -102,6 +103,7 @@ public class Dodatkowe {
 				}
 		        zapis.close();
 			}
+			wczytaj.close();
         }
         catch (IOException e){
             System.out.println("Blad!");       
@@ -143,6 +145,7 @@ public class Dodatkowe {
 				}
 		        zapis.close();
 			}
+			wczytaj.close();
         }
         catch (IOException e){
             System.out.println("Blad!");       
